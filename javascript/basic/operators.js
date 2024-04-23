@@ -15,7 +15,7 @@ console.log(a===b);
 // generate a random number between 0 and 5, if it is lesser than 3,
 //console.log "lesser than 3" else "Greater"
 
-let z = Math.random() * 5;
+let z = Math.random() * 6;
 let f = Math.floor(z);
 console.log(f);
 if(f<3)
