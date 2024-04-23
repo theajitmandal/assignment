@@ -15,12 +15,14 @@ console.log(a===b);
 // generate a random number between 0 and 5, if it is lesser than 3,
 //console.log "lesser than 3" else "Greater"
 
-let z = Math.random() * 6;
-let f = Math.floor(z);
-console.log(f);
-if(f<3)
+let randomNum = Math.random() * 6;
+let roundOfRandomNum = Math.floor(randomNum);
+console.log(roundOfRandomNum);
+if(roundOfRandomNum<3)
 {
-    console.log("Lesser than 3");
+    console.log(roundOfRandomNum + " is Lesser than 3");
+}else if(roundOfRandomNum===3){
+    console.log(roundOfRandomNum + " is Equal to 3");
 }else{
-    console.log("Greater than 3");
+    console.log(roundOfRandomNum + " is Greater than 3");
 }
