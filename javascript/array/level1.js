@@ -13,3 +13,26 @@ console.log(backupArr);
 ///Q3 join the array and console log
 // expected output 352
 console.log(arr.join(''));
+
+//Q4 Remove the last element from the array and log the modified array to the console
+const secondBackUpArr = [...arr];
+secondBackUpArr.pop();
+console.log(secondBackUpArr);
+
+// // Q5 Check if all elements in the num are even. Log "All even" or "Not all even" accordingly.
+const num = [6,4,2,8,10,12]
+
+let allEven = num.every(num => num%2===0);
+console.log(allEven);
+if(allEven){
+    console.log("All Even");
+}else{
+    console.log("Not All Even");
+}
+
+// // Find the index of a specific element in the array. Log the index to the console. 
+// //expected output: 3 //index should be 2
+
+const allNum = [3, 5, 2, 8, 5];
+const searchElement = 2;
+console.log(allNum.indexOf(2));
