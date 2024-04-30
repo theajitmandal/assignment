@@ -19,7 +19,7 @@ const Register = () => {
           >
             Submit
           </Button><br/>
-          Already have an account, <Link href="/login">Sign In</Link>
+          Already have an account, <Link href="/login">Sign In</Link> Now
         </div>
       </div>
     </div>
