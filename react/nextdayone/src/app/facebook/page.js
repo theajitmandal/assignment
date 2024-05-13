@@ -18,7 +18,13 @@ const page = () => {
         //love ---> newReaction --->love
         setReaction(newReaction);
         setColor('newColor');
-        newReaction === reaction && newColor === color ? setColor('grey') : setColor(newColor);
+        if (newReaction === reaction && color === newColor) {
+            setColor('grey')
+            setReaction('like')
+        } else {
+            setColor(newColor)
+            setReaction(newReaction)
+        }
     }
 
     const ReactionDiv = () => {
@@ -35,14 +41,14 @@ const page = () => {
         //we will have if else later, if reaction is like, show like button, else show other part
         if (reaction === 'love') {
             return (
-                <button onMouseEnter={() => setReactionDivOpen(true)} className='p-2'><FaHeart color="crimson" /></button>
+                <button onClick={()=>changeReaction('love')} onMouseEnter={() => setReactionDivOpen(true)} className='p-2'><FaHeart color="crimson" /></button>
             )
         } else if (reaction === 'laugh') {
-            <button onMouseEnter={() => setReactionDivOpen(true)} className='p-2'><FaRegFaceLaughSquint color="crimson" /></button>
+            <button onClick={()=>changeReaction('laugh')} onMouseEnter={() => setReactionDivOpen(true)} className='p-2'><FaRegFaceLaughSquint color="crimson" /></button>
         }
         else {
             return (
-                <button onMouseEnter={() => setReactionDivOpen(true)} className='bg-gray-200 p-2 border border-black'><GrLike color={color} /></button>
+                <button onClick={()=>changeReaction('like')} onMouseEnter={() => setReactionDivOpen(true)} className='bg-gray-200 p-2 border border-black'><GrLike color={color} /></button>
             )
         }
     }
