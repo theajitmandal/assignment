@@ -4,7 +4,7 @@
 //yup --> validator, alternative: joi, zod
 
 'use client'
-import React from 'react';
+import React, {useRef} from 'react';
 import { useFormik } from 'formik';
 import { Input } from "@nextui-org/react";
 import * as Yup from 'yup';
@@ -26,6 +26,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const SignupForm = () => {
+    const inputRef = useRef(null);
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -42,6 +43,7 @@ const SignupForm = () => {
             <label htmlFor="firstName">First Name</label>
             <Input
                 isClearable
+                // ref = {inputRef}
                 name="firstName"
                 type="firstName"
                 label="firstName"
@@ -49,8 +51,11 @@ const SignupForm = () => {
                 placeholder="Enter your firstName"
                 onChange={formik.handleChange}
                 value={formik.values.firstName}
-                onClear={() => console.log("input cleared")}
                 className="max-w-xs"
+                onClear = {() => {
+                    // inputRef.current.value = '' //trying to use useRef
+                    formik.setFieldValue("firstName", '')
+                }}
             />
             {formik.errors.firstName}
             <label htmlFor="lastName">Last Name</label>
