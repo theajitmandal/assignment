@@ -1,11 +1,16 @@
+'use client'
 import CustomNavbar from "@/components/navbar/page";
 import { Button } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const Login = () => {
+  const value = useSelector(state => state.counter.value)
   return (
     <div>
+      {/* trying to access value from redux */}
+      {value}
       <CustomNavbar />
       <div className="flex justify-center ">
         <div className="border border-black m-7 w-72 p-4 ">
